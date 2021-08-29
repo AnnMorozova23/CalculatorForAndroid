@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalcButton">
+        <item name="android:layout_margin">@dimen/margin_buttons</item>
+        <item name="android:backgroundTint">@color/Turquoise</item>
+        <item name="rippleColor">@color/white</item>
+    </style>
+
+    <style name="CalcButton.Teal">
+        <item name="android:backgroundTint">@color/teal_700</item>
+    </style>
+</resources>
