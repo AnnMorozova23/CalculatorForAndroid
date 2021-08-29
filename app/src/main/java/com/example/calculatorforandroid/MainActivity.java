@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Calculator calculator;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.key_6,
                 R.id.key_7,
                 R.id.key_8,
-                R.id.key_9
+                R.id.key_9,
+                R.id.key_drop,
 
         };
 
@@ -35,17 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 R.id.key_multiply,
                 R.id.key_percent,
                 R.id.key_sum,
-                R.id.key_drop,
-                R.id.key_result
+                R.id.key_result,
+                R.id.key_c
 
         };
 
         calculator = new Calculator();
+        text = findViewById(R.id.input_text);
 
         View.OnClickListener actionListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 calculator.onActionPressed(view.getId());
+                text.setText(calculator.getText());
             }
         };
 
@@ -53,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 calculator.onNumPressed(view.getId());
+                text.setText(calculator.getText());
+
             }
         };
 
-        for (int i = 0; i <actionId.length ; i++) {
+        for (int i = 0; i < actionId.length; i++) {
             findViewById(actionId[i]).setOnClickListener(actionListener);
         }
 
