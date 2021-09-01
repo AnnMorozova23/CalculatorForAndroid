@@ -4,6 +4,7 @@ public class Calculator {
 
     private double firstArgument;
     private double secondArgument;
+    private double thirdArgument;
 
     private StringBuilder str = new StringBuilder();
     private int actionSelected;
@@ -61,6 +62,7 @@ public class Calculator {
                     str.append(firstArgument * secondArgument);
                     break;
             }
+
         } else if (str.length() > 0 && state == State.FIRST_ARG_INPUT) {
             firstArgument = Double.parseDouble(str.toString());
             state = State.SECOND_ARG_INPUT;
@@ -125,9 +127,13 @@ public class Calculator {
                 case R.id.key_drop:
                     str.append(".");
                     break;
+                case R.id.key_plus_minus:
+                    str.replace(0, 0, "-");
             }
 
         }
+
+
     }
 
     public String getText() {

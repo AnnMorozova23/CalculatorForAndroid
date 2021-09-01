@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.key_8,
                 R.id.key_9,
                 R.id.key_drop,
+                R.id.key_plus_minus
 
         };
 
